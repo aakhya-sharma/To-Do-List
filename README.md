@@ -28,7 +28,8 @@ for (del of dels) {
     let parent = del.parentElement;
     console.log(parent);
   })
-}```
+}
+```
 
 Read it in words:
 
@@ -53,11 +54,12 @@ When the loop is finished, `del` points to the *last* button only.
 
 The function you pass to `addEventListener`:
 
-*js*
+```*js*
 () => {
   let parent = del.parentElement;
   console.log(parent);
 }
+```
 
 This function does *not* run during the loop.  
 It runs later, when you click.
@@ -86,13 +88,14 @@ So: `del.parentElement` “doesn’t work” because it always looks at the one 
 
 Change the listener to a normal function:
 
-*js*
+```*js*
 for (let del of dels) {
   del.addEventListener('click', function () {
     const parent = this.parentElement;
     console.log(parent);
   });
 }
+```
 
 Two important changes:
 
@@ -125,17 +128,19 @@ The big difference:
 
 So this:
 
-*js*
+```*js*
 del.addEventListener('click', function () {
   console.log(this); // the button that was clicked
 });
+```
 
 vs this:
 
-*js*
+```*js*
 del.addEventListener('click', () => {
-  console.log(this); // NOT the button; likely window/undefined depending on strict mode
+  console.log(this); // NOT the button; undefined in this case
 });
+```
 
 Because of that, when you use an arrow function, `this.parentElement` is not what you expect.
 
@@ -149,7 +154,7 @@ So:
 
 The simplest, least confusing version:
 
-*js*
+```*js*
 const dels = document.querySelectorAll('.del');
 
 for (const del of dels) {
@@ -158,6 +163,7 @@ for (const del of dels) {
     console.log(parent);
   });
 }
+```
 
 Why this works:
 
