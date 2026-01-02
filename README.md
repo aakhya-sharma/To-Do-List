@@ -20,7 +20,7 @@ Both matter for what `parentElement` ends up being.
 
 Assume this to be our code between lines 27 to 34 for this problem:
 
-*js*
+```*js*
 let dels = document.querySelectorAll('.del');
 
 for (del of dels) {
@@ -28,7 +28,7 @@ for (del of dels) {
     let parent = del.parentElement;
     console.log(parent);
   })
-}
+}```
 
 Read it in words:
 
