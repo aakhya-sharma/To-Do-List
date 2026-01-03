@@ -1,4 +1,5 @@
 # To-Do-List
+This is a simple to do website wherein you can add or delete tasks. I made this by myself using HTML and JS.
 
 # How to use this repo?
 To access this repo, the source files are webToDo.html and webToDo.js, both of which I have made myself. The reference I took was from the files referenceToDo.html and referenceToDo.js.
